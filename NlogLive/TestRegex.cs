@@ -15,10 +15,30 @@ namespace NlogLive
         string passwordRule4Pattern = "^[A-Z]{1}[a-zA-Z]{7,}([0-9]+)[@#$%^&*+-_]{1}$";
         string[] patternFirstName = { "Himanshu", "Vineet" };
         string[] patternLastName = { "Nete", "Kadwe" };
-        string[] patternEmail = { "himanshuneteh@gmail.com", "kadwe-+vineet@gmail.com" };
         string[] patternMobileNumber = { "91 8803829504", "7378138447" };
         string[] patternPasswordRule4 = { "Himanshunete7@", "Vineetkdwe18##" };
-
+        string[] patternSampleEmail = {"abc@yahoo.com" 
+                                            , "abc-100@yahoo.com," 
+                                            , "abc.100@yahoo.com"
+                                            , "abc111@abc.com,"
+                                            , "abc-100@abc.net,"
+                                            , "abc.100@abc.com.au"
+                                            , "abc@1.com,"
+                                            , "abc@gmail.com.com"
+                                            , "abc+100@gmail.com"
+                                            , "abc"
+                                            , "abc@.com.my"
+                                            , "abc123@gmail.a"
+                                            , "abc123@.com"
+                                            , "abc@.com.com"
+                                            , ".abc@abc.com"
+                                            , "abc()*@gmail.com"
+                                            , "abc@%*.com"
+                                            , "abc..2002@gmail.com"
+                                            , "abc.@gmail.com"
+                                            , "abc@abc@gmail.com"
+                                            , "abc@gmail.com.1a"
+                                            , "abc@gmail.com.aa.au"};
         public void firstName()
         {
             Regex regex = new Regex(firstNamePattern);
@@ -58,16 +78,16 @@ namespace NlogLive
         public void email()
         {
             Regex regex = new Regex(emailPattern);
-            for (int i = 0; i < patternEmail.Length; i++)
+            for (int i = 0; i < patternSampleEmail.Length; i++)
             {
-                var result = regex.Match(patternEmail[i]);
+                var result = regex.Match(patternSampleEmail[i]);
                 if (result.Success)
                 {
-                    Console.WriteLine(patternEmail[i] + " Its a Valid Pattern ");
+                    Console.WriteLine(patternSampleEmail[i] + " Its a Valid Pattern ");
                 }
                 else
                 {
-                    Console.WriteLine(patternEmail[i] + " Its not a Valid Pattern ");
+                    Console.WriteLine(patternSampleEmail[i] + " Its not a Valid Pattern ");
                 }
             }
             Logger.Info(" Regex Expression is Successfully Executed ");
