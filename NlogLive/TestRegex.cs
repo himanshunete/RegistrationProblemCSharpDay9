@@ -29,6 +29,7 @@ namespace NlogLive
             Logger.Info(" Regex Expression is Successfully Executed ");
         }
 
+
         static void Main(string[] args)
         {
             TestRegex regex = new TestRegex();
