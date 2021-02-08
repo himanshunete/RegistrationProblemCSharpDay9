@@ -6,7 +6,6 @@ namespace NlogLive
 {
     class TestRegex
     {
-
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
 
         /// <summary>
