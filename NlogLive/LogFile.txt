@@ -1,0 +1,4 @@
+2021-02-08 00:37:24.2756|ERROR|NlogLive.Program|Goodbye cruel world
+2021-02-08 11:19:07.1094|INFO|NlogLive.TestRegex| Successfully Executed 
+2021-02-08 11:22:44.1920|INFO|NlogLive.TestRegex| Successfully Executed 
+2021-02-08 11:23:23.7335|INFO|NlogLive.TestRegex| Successfully Executed 
