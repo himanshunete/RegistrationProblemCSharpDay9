@@ -12,10 +12,12 @@ namespace NlogLive
         string lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
         string emailPattern = "^[0-9a-zA-Z]+([._+-]?[0-9a-zA-Z]+)*@[0-9A-Za-z]+.([c]{1}[o]{1}[m]{1})*([n]{1}[e]{1}[t]{1})*[,]*([.][a]{1}[u]{1})*([.][c]{1}[o]{1}[m]{1})*$";
         string mobileNumberPattern = "^[9]{1}[1]{1}[ ][0-9]{10}$";
+        string passwordRule1Pattern =  "^[A-Za-z]{8,}$";
         string[] patternFirstName = { "Himanshu", "Vineet" };
         string[] patternLastName = { "Nete", "Kadwe" };
         string[] patternEmail = { "himanshuneteh@gmail.com", "kadwe-+vineet@gmail.com" };
         string[] patternMobileNumber = { "91 8803829504", "7378138447" };
+        string[] patternPasswordRule1 = { "HimanshuNete", "Vineet" };
 
         public void firstName()
         {
@@ -89,6 +91,24 @@ namespace NlogLive
             Logger.Info(" Regex Expression is Successfully Executed ");
         }
 
+        public void password()
+        {
+            Regex regex = new Regex(passwordRule1Pattern);
+            for (int i = 0; i < patternPasswordRule1.Length; i++)
+            {
+                var result = regex.Match(patternPasswordRule1[i]);
+                if (result.Success)
+                {
+                    Console.WriteLine(patternPasswordRule1[i] + " Its a Valid Pattern ");
+                }
+                else
+                {
+                    Console.WriteLine(patternPasswordRule1[i] + " Its not a Valid Pattern ");
+                }
+            }
+            Logger.Info(" Regex Expression is Successfully Executed ");
+        }
+
         static void Main(string[] args)
         {
             TestRegex regex = new TestRegex();
@@ -99,6 +119,8 @@ namespace NlogLive
             regex.email();
             Console.WriteLine("**************************");
             regex.mobileNumber();
+            Console.WriteLine("**************************");
+            regex.password();
         }
     }
 }
