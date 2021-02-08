@@ -12,12 +12,12 @@ namespace NlogLive
         string lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
         string emailPattern = "^[0-9a-zA-Z]+([._+-]?[0-9a-zA-Z]+)*@[0-9A-Za-z]+.([c]{1}[o]{1}[m]{1})*([n]{1}[e]{1}[t]{1})*[,]*([.][a]{1}[u]{1})*([.][c]{1}[o]{1}[m]{1})*$";
         string mobileNumberPattern = "^[9]{1}[1]{1}[ ][0-9]{10}$";
-        string passwordRule3Pattern = "^[A-Z]{1}[a-zA-Z]{7,}([0-9]+)$";
+        string passwordRule4Pattern = "^[A-Z]{1}[a-zA-Z]{7,}([0-9]+)[@#$%^&*+-_]{1}$";
         string[] patternFirstName = { "Himanshu", "Vineet" };
         string[] patternLastName = { "Nete", "Kadwe" };
         string[] patternEmail = { "himanshuneteh@gmail.com", "kadwe-+vineet@gmail.com" };
         string[] patternMobileNumber = { "91 8803829504", "7378138447" };
-        string[] patternPasswordRule3 = { "Himanshunete", "Vineetkdwe18" };
+        string[] patternPasswordRule4 = { "Himanshunete7@", "Vineetkdwe18##" };
 
         public void firstName()
         {
@@ -93,17 +93,17 @@ namespace NlogLive
 
         public void password()
         {
-            Regex regex = new Regex(passwordRule3Pattern);
-            for (int i = 0; i < patternPasswordRule3.Length; i++)
+            Regex regex = new Regex(passwordRule4Pattern);
+            for (int i = 0; i < patternPasswordRule4.Length; i++)
             {
-                var result = regex.Match(patternPasswordRule3[i]);
+                var result = regex.Match(patternPasswordRule4[i]);
                 if (result.Success)
                 {
-                    Console.WriteLine(patternPasswordRule3[i] + " Its a Valid Pattern ");
+                    Console.WriteLine(patternPasswordRule4[i] + " Its a Valid Pattern ");
                 }
                 else
                 {
-                    Console.WriteLine(patternPasswordRule3[i] + " Its not a Valid Pattern ");
+                    Console.WriteLine(patternPasswordRule4[i] + " Its not a Valid Pattern ");
                 }
             }
             Logger.Info(" Regex Expression is Successfully Executed ");
