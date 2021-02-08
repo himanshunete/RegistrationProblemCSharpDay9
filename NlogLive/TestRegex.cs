@@ -8,11 +8,19 @@ namespace NlogLive
     {
 
         private static readonly NLog.Logger Logger = NLog.LogManager.GetCurrentClassLogger();
+
+        /// <summary>
+        /// Patterns
+        /// </summary>
         string firstNamePattern = "^[A-Z]{1}[a-z]{2,}$";
         string lastNamePattern = "^[A-Z]{1}[a-z]{2,}$";
         string emailPattern = "^[0-9a-zA-Z]+([._+-]?[0-9a-zA-Z]+)*@[0-9A-Za-z]+.([c]{1}[o]{1}[m]{1})*([n]{1}[e]{1}[t]{1})*[,]*([.][a]{1}[u]{1})*([.][c]{1}[o]{1}[m]{1})*$";
         string mobileNumberPattern = "^[9]{1}[1]{1}[ ][0-9]{10}$";
         string passwordRule4Pattern = "^[A-Z]{1}[a-zA-Z]{7,}([0-9]+)[@#$%^&*+-_]{1}$";
+
+        /// <summary>
+        /// Pre-Defined Inputs
+        /// </summary>
         string[] patternFirstName = { "Himanshu", "Vineet" };
         string[] patternLastName = { "Nete", "Kadwe" };
         string[] patternMobileNumber = { "91 8803829504", "7378138447" };
@@ -39,6 +47,10 @@ namespace NlogLive
                                             , "abc@abc@gmail.com"
                                             , "abc@gmail.com.1a"
                                             , "abc@gmail.com.aa.au"};
+
+        /// <summary>
+        /// Validate First Name
+        /// </summary>
         public void firstName()
         {
             Regex regex = new Regex(firstNamePattern);
@@ -57,6 +69,9 @@ namespace NlogLive
             Logger.Info(" Regex Expression is Successfully Executed ");
         }
 
+        /// <summary>
+        ///  Validate Last Name
+        /// </summary>
         public void lastName()
         {
             Regex regex = new Regex(lastNamePattern);
@@ -75,6 +90,9 @@ namespace NlogLive
             Logger.Info(" Regex Expression is Successfully Executed ");
         }
 
+        /// <summary>
+        ///  Validate Email
+        /// </summary>
         public void email()
         {
             Regex regex = new Regex(emailPattern);
@@ -93,6 +111,9 @@ namespace NlogLive
             Logger.Info(" Regex Expression is Successfully Executed ");
         }
 
+        /// <summary>
+        ///  Validate Mobile Number
+        /// </summary>
         public void mobileNumber()
         {
             Regex regex = new Regex(mobileNumberPattern);
@@ -111,6 +132,9 @@ namespace NlogLive
             Logger.Info(" Regex Expression is Successfully Executed ");
         }
 
+        /// <summary>
+        ///  Validate Password
+        /// </summary>
         public void password()
         {
             Regex regex = new Regex(passwordRule4Pattern);
@@ -129,6 +153,11 @@ namespace NlogLive
             Logger.Info(" Regex Expression is Successfully Executed ");
         }
 
+
+        /// <summary>
+        /// Call from Main Method
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             TestRegex regex = new TestRegex();
